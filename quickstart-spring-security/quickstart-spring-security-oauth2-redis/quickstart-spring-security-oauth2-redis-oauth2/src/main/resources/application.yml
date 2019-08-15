@@ -1,0 +1,25 @@
+# --- server
+server:
+  port: 9001
+  servlet:
+    context-path: /oauth2-server
+
+spring:
+  application:
+    name: oauth2-server
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+        max-idle: 8
+    timeout: 100
+
+logging:
+  level:
+    org.springframework.security: DEBUG

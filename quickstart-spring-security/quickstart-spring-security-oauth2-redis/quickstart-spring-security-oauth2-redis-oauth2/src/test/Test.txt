@@ -1,0 +1,29 @@
+1. Authrization Code 模式：
+
+1)获取code:
+
+http://localhost:8085/oauth/authorize?grant_type=authorization_code&response_type=code&client_id=first-client&state=1234
+
+2)获取token:
+
+curl --request POST \
+     --url 'http://localhost:8085/oauth/token' \
+     --header 'content-type: application/x-www-form-urlencoded' \
+     --data 'code=bFV0XM&state=1234&grant_type=authorization_code&redirect_uri=http%3a%2f%2flocalhost%3a8081%2foauth%2flogin%2fclient-app&client_id=first-client&client_secret=noonewilleverguess'
+
+
+3)刷新token：
+
+curl --request POST \
+     --url 'http://localhost:8085/oauth/token' \
+     --header 'content-type: application/x-www-form-urlencoded' \
+     --data 'refresh_token=b37d7b56-93da-464c-bc46-15bbc3b7f00d&grant_type=refresh_token&client_id=first-client&client_secret=noonewilleverguess'
+
+2. Client Credentials
+
+1)获取token：
+
+curl --request POST \
+       --url 'http://localhost:8085/oauth/token' \
+       --header 'content-type: application/x-www-form-urlencoded' \
+       --data 'grant_type=client_credentials&client_id=first-client&client_secret=noonewilleverguess'

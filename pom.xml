@@ -1,74 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>org.quickstart</groupId>
-		<artifactId>quickstart-all</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath> <!-- lookup parent from repository -->
-	</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!--<parent>
+    <groupId>org.quickstart</groupId>
+    <artifactId>quickstart-all</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+  </parent>-->
 
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-spring-boot2</artifactId>
-	<packaging>pom</packaging>
-	<name>${project.artifactId}-${project.version}</name>
-	<url>http://maven.apache.org</url>
-	<description>Demo project for XXX</description>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.quickstart</groupId>
+  <artifactId>quickstart-spring-boot2</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>${project.artifactId}-${project.version}</name>
+  <url>http://maven.apache.org</url>
+  <description>Demo project for XXX</description>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-	</properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+  </properties>
 
-	<dependencyManagement>
-		<dependencies>
+  <dependencyManagement>
+    <dependencies>
 
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-dependencies</artifactId>
-				 <version>2.1.2.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<!-- <version>Finchley.RELEASE</version> -->
-				<version>Greenwich.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>2.1.6.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-		</dependencies>
-	</dependencyManagement>
+  <dependencies>
 
-	<dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+  </dependencies>
 
-	</dependencies>
+  <modules>
+    <module>quickstart-spring-security</module>
+  </modules>
 
-	<modules>
-	</modules>
-
-	<!-- <repositories> -->
-	<!-- <repository> -->
-	<!-- <id>spring-milestones</id> -->
-	<!-- <name>Spring Milestones</name> -->
-	<!-- <url>https://repo.spring.io/libs-milestone</url> -->
-	<!-- <snapshots> -->
-	<!-- <enabled>false</enabled> -->
-	<!-- </snapshots> -->
-	<!-- </repository> -->
-	<!-- </repositories> -->
+  <!-- <repositories> -->
+  <!-- <repository> -->
+  <!-- <id>spring-milestones</id> -->
+  <!-- <name>Spring Milestones</name> -->
+  <!-- <url>https://repo.spring.io/libs-milestone</url> -->
+  <!-- <snapshots> -->
+  <!-- <enabled>false</enabled> -->
+  <!-- </snapshots> -->
+  <!-- </repository> -->
+  <!-- </repositories> -->
 
 </project>
