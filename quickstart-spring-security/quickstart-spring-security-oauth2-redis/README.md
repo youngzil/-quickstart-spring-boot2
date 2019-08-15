@@ -1,12 +1,12 @@
-# aifgw-security-oauth2测试
+# quickstart-spring-security-oauth2测试
 
 ### 依赖redis。本地测试redis使用默认端口（6379）即可
 
-1. 启动认证服务。aifgw-security-oauth2
+1. 启动认证服务。quickstart-spring-security-oauth2-redis-oauth2
     > 端口：9001
-2. 启动认证客户端，采用的是sso模式。aifgw-security-client
+2. 启动认证客户端，采用的是sso模式。quickstart-spring-security-oauth2-redis-client
     > 端口：9002
-3. 启动认证资源服务。aifgw-security-resource
+3. 启动认证资源服务。quickstart-spring-security-oauth2-redis-resource
     > 端口：9003
 4. 用postman或者curl命令调用接口增加一个client
    #### 4.1 增加一个管理员
@@ -15,7 +15,7 @@
    ```
    #### 4.2 增加一个auth client
    ```
-   curl -H "Content-Type:application/json" -X POST --data '{ "client_id": "resourceServer1", "resource_ids": ["client100"], "client_secret": "123456", "scope": "select", "authorized_grant_types": ["authorization_code", "refresh_token"], "redirect_uri": ["http://localhost:9002/oauth2-client/redirect"], "authorities": ["admin"], "access_token_validity": 7200, "refresh_token_validity": 7200, "autoapprove": ["all"], "abc": 123 }' http://localhost:9001/oauth2-server/client 
+   curl -H "Content-Type:application/json" -X POST --data '{ "client_id": "resourceServer1", "resource_ids": ["client100"], "client_secret": "123456", "scope": "select", "authorized_grant_types": ["authorization_code","client_credentials", "password","implicit", "refresh_token"], "redirect_uri": ["http://localhost:9002/oauth2-client/redirect"], "authorities": ["admin"], "access_token_validity": 7200, "refresh_token_validity": 7200, "autoapprove": ["all"], "abc": 123 }' http://localhost:9001/oauth2-server/client 
    ```
    
 5. 测试
