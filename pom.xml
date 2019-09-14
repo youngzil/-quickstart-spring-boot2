@@ -43,6 +43,14 @@
     </dependency>
 
     <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.10</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
@@ -52,6 +60,7 @@
 
   <modules>
     <module>quickstart-spring-security</module>
+    <module>quickstart-springboot-tkmapper</module>
   </modules>
 
   <repositories>

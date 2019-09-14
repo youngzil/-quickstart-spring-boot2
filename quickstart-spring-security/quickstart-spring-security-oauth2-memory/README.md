@@ -1,3 +1,5 @@
+postman查看oauth2-memory.postman_collection.json
+
 一、授权码模式
 
 1、浏览器输入
