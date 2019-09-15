@@ -76,6 +76,7 @@ https://github.com/fuyuanwu/spring-security5
 
 Springboot2实现OAuth2.0四种授权方式
 https://github.com/nivance/spring-security-oauth2
+https://spring.io/guides/tutorials/spring-boot-oauth2/
 
 
 代码参考

@@ -60,6 +60,7 @@
 
   <modules>
     <module>quickstart-spring-security</module>
+    <module>quickstart-spring-swagger</module>
     <module>quickstart-springboot-tkmapper</module>
   </modules>
 
