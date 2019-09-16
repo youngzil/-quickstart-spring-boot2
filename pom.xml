@@ -28,7 +28,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.1.8.RELEASE</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -59,6 +59,7 @@
   </dependencies>
 
   <modules>
+    <module>quickstart-spring-cache</module>
     <module>quickstart-spring-security</module>
     <module>quickstart-spring-swagger</module>
     <module>quickstart-springboot-tkmapper</module>
