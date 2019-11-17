@@ -47,6 +47,7 @@ http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html
 
 SpringSecurityOauth2源码解读
 https://juejin.im/post/5b3f283af265da0f6012ef30
+http://blog.didispace.com/spring-security-oauth2-xjf-3/
 
 
 文章参考
