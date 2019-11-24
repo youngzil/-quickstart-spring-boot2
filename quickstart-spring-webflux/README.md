@@ -23,3 +23,18 @@ webflux-security示例
 https://github.com/duyleduc/spring-boot-webflux-security
 https://github.com/jittagornp/spring-boot-webflux-example/tree/master/spring-boot-webflux-security
 
+
+性能测试 —— Tomcat、Jetty、Undertow 基准测试
+http://www.iocoder.cn/Performance-Testing/Tomcat-Jetty-Undertow-benchmark/
+
+https://colobu.com/2015/11/17/Jax-RS-Performance-Comparison/
+https://colobu.com/2015/11/15/best-available-java-restful-micro-frameworks/
+
+Jersey + Grizzly
+Jersey + Jetty
+Dropwizard
+RESTEasy + Netty
+RESTEasy + Undertow
+
+因为追求轻量级，便于发布到docker容器中，我也不会考察JBOSS, Tomcat这样的JEE容器， 而是选用jetty, undertow这样的嵌入式容器。
+

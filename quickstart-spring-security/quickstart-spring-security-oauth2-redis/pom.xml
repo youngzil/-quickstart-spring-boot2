@@ -16,8 +16,6 @@
   <url>http://maven.apache.org</url>
   <description>Demo project for XXX</description>
 
-
-
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>

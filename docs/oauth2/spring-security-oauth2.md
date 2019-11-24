@@ -83,5 +83,5 @@ https://spring.io/guides/tutorials/spring-boot-oauth2/
 代码参考
 https://www.jianshu.com/p/734348fb6cbb
 https://github.com/lexburner/oauth2-demo
-
+https://github.com/zth390872451/oauth2-redis-mysql
 

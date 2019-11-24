@@ -20,6 +20,7 @@
   <modules>
     <module>quickstart-spring-security-oauth2-redis</module>
     <module>quickstart-spring-security-oauth2-memory</module>
+    <module>quickstart-spring-webflux-security</module>
   </modules>
 
 </project>
