@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.quickstart.spring.starter.autoconfigure.GreetingAutoConfiguration

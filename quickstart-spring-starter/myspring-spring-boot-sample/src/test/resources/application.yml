@@ -1,0 +1,8 @@
+quickstart:
+  spring:
+    starter:
+      enable: true
+      members:
+        - yangzl
+        - lilei
+        - hanmeimei

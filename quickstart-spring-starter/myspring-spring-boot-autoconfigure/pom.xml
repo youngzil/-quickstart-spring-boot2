@@ -4,14 +4,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>org.quickstart</groupId>
-    <artifactId>quickstart-spring-webflux</artifactId>
+    <artifactId>quickstart-spring-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath/> <!-- lookup parent from repository -->
+<!--    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>quickstart-spring-webflux-tomcat</artifactId>
-  <packaging>war</packaging>
+  <artifactId>myspring-spring-boot-autoconfigure</artifactId>
+  <packaging>jar</packaging>
   <name>${project.artifactId}-${project.version}</name>
   <url>http://maven.apache.org</url>
   <description>Demo project for xxxx</description>
@@ -23,12 +23,13 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>io.projectreactor</groupId>
-      <artifactId>reactor-core</artifactId>
-      <version>3.3.0.RELEASE</version>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure-processor</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 
