@@ -38,6 +38,14 @@ OAuth2AuthenticationManager#authenticate(Authentication authentication)
 
 ---------------------------------------------------------------------------------------------------------------------
 
+OAuth 2.0
+https://oauth.net/
+https://oauth.net/code/java/
+
+参考
+/Users/yangzl/git/notes/document/doc/base/SSO实现OpenID和OAuth.md
+
+
 Oauth2讲解参考
 https://coolshell.cn/articles/19395.html
 https://segmentfault.com/a/1190000012332319
