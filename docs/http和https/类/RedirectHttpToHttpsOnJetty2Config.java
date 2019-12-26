@@ -33,18 +33,33 @@ public class RedirectHttpToHttpsOnJetty2Config {
         factory.addServerCustomizers(new JettyServerCustomizer() {
             @Override
             public void customize(Server server) {
-               final HttpConnectionFactory httpConnectionFactory = server.getConnectors()[0].getConnectionFactory(HttpConnectionFactory.class);
+//                final HttpConnectionFactory httpConnectionFactory = server.getConnectors()[0].getConnectionFactory(HttpConnectionFactory.class);
+//
+//                final ServerConnector httpConnector = new ServerConnector(server, httpConnectionFactory);
+//                httpConnector.setPort(8080 /* HTTP */);
+//                server.addConnector(httpConnector);
 
-               final ServerConnector httpConnector = new ServerConnector(server, httpConnectionFactory);
-               httpConnector.setPort(8080 /* HTTP */);
-               server.addConnector(httpConnector);
 
-               final HandlerList handlerList = new HandlerList();
-               handlerList.addHandler(new SecuredRedirectHandler());
-               handlerList.addHandler(jettyConfiguration.);
-               for(Handler handler : server.getHandlers())
-                   handlerList.addHandler(handler);
-               server.setHandler(handlerList);
+                HttpConfiguration http = new HttpConfiguration();
+                http.addCustomizer(new SecureRequestCustomizer());
+
+                // Configuration for HTTPS redirect
+                http.setSecurePort(9001);
+                http.setSecureScheme("https");
+                ServerConnector connector = new ServerConnector(server);
+                connector.addConnectionFactory(new HttpConnectionFactory(http));
+                // Setting HTTP port
+                connector.setPort(8080);
+
+                server.addConnector(connector);
+//
+
+//                final HandlerList handlerList = new HandlerList();
+//                handlerList.addHandler(new SecuredRedirectHandler());
+//                handlerList.addHandler(jettyConfiguration.);
+//                for(Handler handler : server.getHandlers())
+//                    handlerList.addHandler(handler);
+//                server.setHandler(handlerList);
             }
         });
         return factory;

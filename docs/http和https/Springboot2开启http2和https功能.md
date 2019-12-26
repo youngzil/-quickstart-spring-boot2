@@ -5,7 +5,7 @@
 1、生成证书
 
 2、配置文件
-```aidl
+```
 server:
   ssl:
     key-store: classpath:keystore.p12
@@ -50,6 +50,7 @@ server:
             <groupId>org.eclipse.jetty.http2</groupId>
             <artifactId>http2-server</artifactId>
         </dependency>-->
+
 ```
 
 4、类     
