@@ -97,6 +97,7 @@
     <module>quickstart-spring-kafka</module>
     <module>quickstart-spring-webflux</module>
     <module>quickstart-spring-starter</module>
+    <module>quickstart-spring-valid</module>
   </modules>
 
   <repositories>
