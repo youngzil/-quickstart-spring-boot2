@@ -1,0 +1,23 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "org.quickstart.spring.security.jwt.resource.config.SecurityProperties",
+      "name": "security",
+      "type": "org.quickstart.spring.security.jwt.resource.config.SecurityProperties"
+    },
+    {
+      "sourceType": "org.quickstart.spring.security.jwt.resource.config.SecurityProperties",
+      "name": "security.jwt",
+      "sourceMethod": "getJwt()",
+      "type": "org.quickstart.spring.security.jwt.resource.config.SecurityProperties$JwtProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "org.quickstart.spring.security.jwt.resource.config.SecurityProperties$JwtProperties",
+      "name": "security.jwt.public-key",
+      "type": "org.springframework.core.io.Resource"
+    }
+  ]
+}

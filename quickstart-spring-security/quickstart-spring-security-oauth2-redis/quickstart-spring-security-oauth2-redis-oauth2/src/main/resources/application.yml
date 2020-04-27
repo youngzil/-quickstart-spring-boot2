@@ -3,14 +3,20 @@ server:
   port: 9001
   servlet:
     context-path: /oauth2-server
+  #jetty配置，主要是acceptors和selectors
+  jetty:
+    acceptors: 2
+    selectors: 4
 
 spring:
   application:
     name: oauth2-server
   redis:
+    cluster:
+      nodes: 20.26.37.179:28001,20.26.37.179:28002,20.26.37.180:28003,20.26.37.180:28004,20.26.37.181:28005,20.26.37.181:28006
     database: 0
-    host: 127.0.0.1
-    port: 6379
+#    host: 127.0.0.1
+#    port: 6379
     password:
     lettuce:
       pool:
@@ -20,6 +26,11 @@ spring:
         max-idle: 8
     timeout: 100
 
+logPath: logs
+
 logging:
   level:
-    org.springframework.security: DEBUG
+    root: INFO
+    org.quickstart.spring.security.oauth2.redis.oauth2: DEBUG
+  file: ${logPath}/${spring.application.name}.log
+

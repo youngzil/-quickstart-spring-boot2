@@ -42,12 +42,12 @@ public class RedisClientDetailsService implements ClientDetailsService {
   }
 
   public void storeClientDetails(ClientDetails clientDetails) {
-    Assert.isTrue(!clientExists(clientDetails.getClientId()), "client should not exist");
+    Assert.isTrue(clientExists(clientDetails.getClientId()), "client should not exist");
     saveOrUpdate(clientDetails);
   }
 
   public void updateClientDetails(ClientDetails clientDetails) {
-    Assert.isTrue(clientExists(clientDetails.getClientId()), "client should exist");
+    Assert.isTrue(!clientExists(clientDetails.getClientId()), "client should exist");
     saveOrUpdate(clientDetails);
   }
 

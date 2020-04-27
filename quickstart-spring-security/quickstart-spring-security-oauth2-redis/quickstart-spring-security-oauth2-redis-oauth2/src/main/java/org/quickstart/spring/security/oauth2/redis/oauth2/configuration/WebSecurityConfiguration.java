@@ -27,7 +27,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)//
         .and().authorizeRequests()//
-        .antMatchers("/user", "/client", "/login.html").permitAll()// 授权配置
+        .antMatchers("/user/**","/client/**", "/login.html").permitAll()// 授权配置
         .anyRequest().authenticated()// 所有请求必须登陆后访问
         .and().httpBasic()//
         .and().formLogin()// 默认配置，/login和/login?error
