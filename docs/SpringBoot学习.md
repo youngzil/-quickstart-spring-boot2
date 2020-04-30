@@ -3,7 +3,7 @@
 3、spring启动执行某些特定方法
 4、SpringBoot使用spring-boot-maven-plugin插件打包，实际是通过org.springframework.boot.loader.JarLauncher来加载jar的
 5、Springboot中使用aop导致@Autowired全部注入失败 和 Spring AOP注解详解
-
+6、Spring常用注解总结
 
 
 
@@ -142,7 +142,9 @@ https://blog.csdn.net/qq_28024699/article/details/80595501
 
 ---------------------------------------------------------------------------------------------------------------------
 
+Spring常用注解总结
 
+https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework/spring/spring-annotations.md
 
 
 ---------------------------------------------------------------------------------------------------------------------

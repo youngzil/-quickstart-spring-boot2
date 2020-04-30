@@ -20,8 +20,59 @@ Client调用方式：代码（使用客户端jar，使用http方式）、postman
 
 ---------------------------------------------------------------------------------------------------------------------
 
-@EnableResourceServer会给Spring Security的FilterChan添加一个OAuth2AuthenticationProcessingFilter，OAuth2AuthenticationProcessingFilter会使用OAuth2AuthenticationManager来验证token。 
+@EnableResourceServer会给Spring Security的FilterChan添加一个OAuth2AuthenticationProcessingFilter
+OAuth2AuthenticationProcessingFilter会使用OAuth2AuthenticationManager来验证token。 
 OAuth2AuthenticationManager#authenticate(Authentication authentication)
+
+
+TokenEndpoint.java中的/oauth/token
+CheckTokenEndpoint.java中的/oauth/check_token
+
+
+TokenEndpoint.java中的/oauth/token内：
+1、获取ClientDetails
+ClientDetails authenticatedClient = getClientDetailsService().loadClientByClientId(clientId);
+
+InMemoryClientDetailsService
+JdbcClientDetailsService
+RedisClientDetailsService【自己重写】
+
+
+2、通过OAuth2RequestFactory构建TokenRequest
+TokenRequest tokenRequest = getOAuth2RequestFactory().createTokenRequest(parameters, authenticatedClient);
+
+
+3、通过TokenGranter的grant方法获取OAuth2AccessToken
+OAuth2AccessToken token = getTokenGranter().grant(tokenRequest.getGrantType(), tokenRequest);
+
+AuthorizationCodeTokenGranter
+ClientCredentialsTokenGranter
+ImplicitTokenGranter
+RefreshTokenGranter
+ResourceOwnerPasswordTokenGranter
+
+
+4、用户信息UserDetailsService和用户管理UserDetailsManager接口实现类：
+InMemoryUserDetailsManager
+JdbcUserDetailsManager
+RedisUserDetailsManager【自己重写】
+
+
+5、TokenGranter中：调用TokenStore
+TokenServices（AuthorizationServerTokenServices）中方法：实现类DefaultTokenServices.java
+OAuth2AccessToken createAccessToken(OAuth2Authentication authentication) throws AuthenticationException;
+OAuth2AccessToken refreshAccessToken(String refreshToken, TokenRequest tokenRequest) throws AuthenticationException;
+OAuth2AccessToken getAccessToken(OAuth2Authentication authentication);
+
+
+6、TokenStore接口的实现：
+InMemoryTokenStore
+JdbcTokenStore
+JwkTokenStore
+JwtTokenStore
+RedisTokenStore
+
+
 
 请求Token，是否正常返回，
 根据返回判断此次请求resourceId是否在授权范围内
