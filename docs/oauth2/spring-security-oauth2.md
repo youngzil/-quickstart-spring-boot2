@@ -73,6 +73,34 @@ JwtTokenStore
 RedisTokenStore
 
 
+Redis存储的Key：
+private static final String ACCESS = "access:";
+private static final String AUTH_TO_ACCESS = "auth_to_access:";
+private static final String AUTH = "auth:";
+private static final String REFRESH_AUTH = "refresh_auth:";
+private static final String ACCESS_TO_REFRESH = "access_to_refresh:";
+private static final String REFRESH = "refresh:";
+private static final String REFRESH_TO_ACCESS = "refresh_to_access:";
+private static final String CLIENT_ID_TO_ACCESS = "client_id_to_access:";
+private static final String UNAME_TO_ACCESS = "uname_to_access:";
+
+
+生成Token的时候：
+ACCESS+token = OAuth2AccessToken对象，全部的Token信息
+AUTH+token = OAuth2Authentication对象
+AUTH_TO_ACCESS+MD5值（USERNAME+CLIENT_ID+SCOPE） = OAuth2AccessToken对象，全部的Token信息
+UNAME_TO_ACCESS+clientId+:+uname = OAuth2AccessToken对象，全部的Token信息
+CLIENT_ID_TO_ACCESS+clientId = OAuth2AccessToken对象，全部的Token信息
+
+REFRESH_TO_ACCESS+refreshToken = token值
+ACCESS_TO_REFRESH+token = refreshToken值
+
+
+生成RefreshToken的时候：
+REFRESH+refreshToken = OAuth2RefreshToken对象，refreshToken值
+REFRESH_AUTH+refreshToken = OAuth2Authentication对象
+
+
 
 请求Token，是否正常返回，
 根据返回判断此次请求resourceId是否在授权范围内

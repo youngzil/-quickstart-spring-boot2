@@ -1,7 +1,4 @@
-
-
-===============================================================================================================
-https://blog.csdn.net/qq924862077/article/category/6754158
+学习网站
 
 
 1、Spring Bean对象
@@ -11,7 +8,24 @@ https://blog.csdn.net/qq924862077/article/category/6754158
 5、BeanFactory和FactoryBean
 6、Spring配置解析文件ApplicationContext.xml
 7、自定义命名空间处理器NamespaceHandler和Spring自定义XML标签
+java和spring中的上下文Context
 
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+学习网站
+https://mp.weixin.qq.com/s/Xs0C1cCAva9YbYumCXUqnA
+https://gitee.com/javacode2018/spring-series
+
+https://blog.csdn.net/qq924862077/article/category/6754158
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+Spring Bean对象
 
 
 BeanDefinitionHolder：
@@ -41,6 +55,11 @@ prototype配置实例：
 或者
 <beanid="role" class="spring.chapter2.maryGame.Role" singleton="false"/>
 
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
 Bean对象循环依赖问题处理：
 1、Spring不支持原型bean的循环依赖。对于原型bean的初始化过程中不论是通过构造器参数循环依赖还是通过setXxx方法产生循环依赖，Spring都会直接报错处理BeanCurrentlyInCreationException
 2、单例bean 构造器参数循环依赖：Spring在创建构造器循环依赖时其实就是循环初始化操作 A-> B -> A  当A要被初始化第二次时就直接抛出异常BeanCurrentlyInCreationException
@@ -49,7 +68,11 @@ Spring通过setXxx或者@Autowired方法解决循环依赖其实是通过提前�
 
 
 
-Spring Bean的生命周期：https://blog.csdn.net/qq924862077/article/details/75043985
+---------------------------------------------------------------------------------------------------------------------
+Spring Bean的生命周期和常用接口类
+
+Spring Bean的生命周期：
+https://blog.csdn.net/qq924862077/article/details/75043985
 Bean的完整生命周期经历了各种方法调用，这些方法可以划分为以下几类：
 1、Bean自身的方法　　：　　这个包括了Bean本身调用的方法和通过配置文件中<bean>的init-method和destroy-method指定的方法
 2、Bean级生命周期接口方法　　：　　这个包括了BeanNameAware、BeanFactoryAware、InitializingBean和DiposableBean这些接口的方法
@@ -69,6 +92,10 @@ BeanPostProcessor接口提供了两个方法：
 2、postProcessAfterInitialization  可以对bean在实例化之后添加一些逻辑处理
 
 
+
+
+---------------------------------------------------------------------------------------------------------------------
+BeanFactory和FactoryBean
 
 spring中有两种类型的Bean，FactoryBean实现原理：
 FactoryBean方法：getObject、getObjectType、isSingleton
@@ -103,9 +130,10 @@ Spring为我们提供了许多易用的BeanFactory实现，XmlBeanFactory就是�
 FactoryBean以Bean结尾，表示它是一个Bean，不同于普通Bean的是：它是实现了FactoryBean<T>接口的Bean，根据该Bean的ID从BeanFactory中获取的实际上是FactoryBean的getObject()返回的对象，而不是FactoryBean本身，如果要获取FactoryBean对象，请在id前面加一个&符号来获取。
 例如自己实现一个FactoryBean，功能：用来代理一个对象，对该对象的所有方法做一个拦截，在调用前后都输出一行LOG，模仿ProxyFactoryBean的功能。
 
-
+---------------------------------------------------------------------------------------------------------------------
 
 Spring配置解析文件ApplicationContext.xml：
+
 ApplicationContext（实现类ClassPathXmlApplicationContext和FileSystemXmlApplicationContext等）
 ApplicationContext--》BeanFactory--》XmlBeanDefinitionReader（解析成Document对象）--》BeanDefinitionDocumentReader（转为输入流）--》BeanDefinitionParserDelegate（解析生成BeanDefinitionHolder，其实bean元素的解析的结果是一个BeanDefinition对象，结果是将BeanDefinition注册到BeanFactory中）
 1、简单来说在ApplicationContext中所做的操作是初始化了一个BeanFactory和XmlBeanDefinitionReader，
@@ -119,10 +147,10 @@ Spring配置文件的解析处理操作是在BeanDefinitionParserDelegate中完�
 BeanDefinitionParserDelegate做的处理操作就是将bean的各种标签解析成BeanDefinition对象，并组装成BeanDefinitionHolder返回。
 
 
-
+---------------------------------------------------------------------------------------------------------------------
 自定义命名空间处理器NamespaceHandler和Spring自定义XML标签
 
-===============================================================================================================
+---------------------------------------------------------------------------------------------------------------------
 
 
 java和spring中的上下文Context
@@ -178,6 +206,10 @@ PropertyOverrideConfigurer类：用于读取Java属性文件中的属性，并�
  1、this();--构建AnnotatedBeanDefinitionReader和ClassPathBeanDefinitionScanner，在这两个类中registry所有的bean定义，传递的参数就是对象AnnotationConfigApplicationContext（是BeanDefinitionRegistry接口的实现），类似dubbo利用NamespaceHandlerSupport类初始化解析配置文件一样，利用BeanDefinitionRegistry解析bean定义，只是这里利用AnnotatedBeanDefinitionReader和ClassPathBeanDefinitionScanner
 2、register(annotatedClasses);--registry构造函数的参数的class
 3、refresh();--执行bean的扩展方法等，如上面 Spring提供的常用的接口和类，在BeanFactory、ApplicationContext、bean的各个阶段执行对应的扩展方法。初始化（先实例化，后初始化，目前是初始化阶段）所有的非懒加载的实例，顺带有注册功能，如invokeBeanFactoryPostProcessors(beanFactory);和finishBeanFactoryInitialization(beanFactory);等
+ 
+ 
+ 
+ ---------------------------------------------------------------------------------------------------------------------
  
  
  
