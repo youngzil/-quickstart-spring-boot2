@@ -85,6 +85,7 @@ private static final String CLIENT_ID_TO_ACCESS = "client_id_to_access:";
 private static final String UNAME_TO_ACCESS = "uname_to_access:";
 
 
+
 生成Token的时候：
 ACCESS+token = OAuth2AccessToken对象，全部的Token信息
 AUTH+token = OAuth2Authentication对象
@@ -113,6 +114,66 @@ REFRESH_AUTH+refreshToken = OAuth2Authentication对象
 返回的token信息的exp是否过期
 
 {"aud":["client100"],"exp":1565881177,"client_id":"resourceServer1","scope":["select","read"]}
+
+
+
+在已经请求了Token的时候，修改授权码模式不生效，只有等Token失效了再修改才生效
+强制生效：
+删除oauth2:auth_to_access:XXX这个Key即可
+
+
+客户端模式保存的Key：
+oauth2:access:e32b40d8-3793-4f82-aa9f-8f5bf2c87b07
+oauth2:auth:e32b40d8-3793-4f82-aa9f-8f5bf2c87b07
+oauth2:auth_to_access:83a6b9ced54dafc3bd439ed36941c0f8  删除即可
+oauth2:client_id_to_access:app_1587020196405
+
+
+curl --location --request POST 'http://127.0.0.1:9001/oauth2/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=client_credentials' \
+--data-urlencode 'client_id=app_1587020196405' \
+--data-urlencode 'client_secret=e4cccdb8ff2621a722cc8b8b164fa95c'
+
+{
+    "access_token": "27ea92d3-2fd6-4037-b4e7-90d9bcca1b41",
+    "token_type": "bearer",
+    "refresh_token": "5b4d0dc5-cb6b-4338-b9df-9a3b700a5273",
+    "expires_in": 7096,
+    "scope": "all"
+}
+
+客户端和刷新Token保存的Key：
+前面3个是access_token
+后面4个是refresh_token
+
+oauth2:access:27ea92d3-2fd6-4037-b4e7-90d9bcca1b41
+oauth2:access_to_refresh:27ea92d3-2fd6-4037-b4e7-90d9bcca1b41
+oauth2:auth:27ea92d3-2fd6-4037-b4e7-90d9bcca1b41
+oauth2:auth_to_access:83a6b9ced54dafc3bd439ed36941c0f8
+
+oauth2:client_id_to_access:app_1587020196405
+oauth2:refresh:5b4d0dc5-cb6b-4338-b9df-9a3b700a5273
+oauth2:refresh_auth:5b4d0dc5-cb6b-4338-b9df-9a3b700a5273
+oauth2:refresh_to_access:5b4d0dc5-cb6b-4338-b9df-9a3b700a5273
+
+
+大致分为四类：
+1、auth权限、client_id信息
+oauth2:auth:27ea92d3-2fd6-4037-b4e7-90d9bcca1b41
+oauth2:client_id_to_access:app_1587020196405
+
+2、access、access和auth关联
+oauth2:access:27ea92d3-2fd6-4037-b4e7-90d9bcca1b41
+oauth2:auth_to_access:83a6b9ced54dafc3bd439ed36941c0f8
+
+3、refresh、refresh和auth关联
+oauth2:refresh:5b4d0dc5-cb6b-4338-b9df-9a3b700a5273
+oauth2:refresh_auth:5b4d0dc5-cb6b-4338-b9df-9a3b700a5273
+
+4、access和refresh关联、refresh和access关联
+oauth2:refresh_to_access:5b4d0dc5-cb6b-4338-b9df-9a3b700a5273
+oauth2:access_to_refresh:27ea92d3-2fd6-4037-b4e7-90d9bcca1b41
 
 
 ---------------------------------------------------------------------------------------------------------------------

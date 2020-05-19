@@ -5,7 +5,7 @@
 5、Springboot中使用aop导致@Autowired全部注入失败 和 Spring AOP注解详解
 6、Spring常用注解总结
 
-
+Spring Boot 性能优化
 
 
 
@@ -149,6 +149,13 @@ https://github.com/Snailclimb/JavaGuide/blob/master/docs/system-design/framework
 
 ---------------------------------------------------------------------------------------------------------------------
 
+Spring Boot 性能优化
+
+文中大部分内容参考英国一个架构师的 博客 和 DZone 近期发布的文章，在此感谢两位大牛。参考文章及链接：
+（1）Spring Boot 性能优化：Spring Boot Performance；
+（2）Spring Boot 内存优化：Spring Boot Memory Performance；
+（3）https://www.techempower.com/benchmarks/；
+（4）Spring 应用程序优化：Optimizing Spring Framework for App Engine Applications。
 
 
 ---------------------------------------------------------------------------------------------------------------------
