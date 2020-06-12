@@ -1,7 +1,7 @@
 package com.quickstart.springboot.swagger;
 
 /**
- * @author youngzil@163.com
+ * @author yangzl
  * @description TODO
  * @createTime 2019/9/15 21:36
  */

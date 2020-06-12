@@ -8,7 +8,7 @@ import org.quickstart.springboot.tkmapper.example.mappers.MyMapper;
 import org.springframework.stereotype.Component;
 
 /**
- * @author youngzil@163.com
+ * @author yangzl
  * @description TODO
  * @createTime 2019/9/14 09:49
  */

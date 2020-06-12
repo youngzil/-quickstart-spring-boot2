@@ -3,7 +3,7 @@ package com.quickstart.springboot.valid.model;
 import lombok.Data;
 
 /**
- * @author youngzil@163.com
+ * @author yangzl
  * @description TODO
  * @createTime 2020/4/20 22:59
  */

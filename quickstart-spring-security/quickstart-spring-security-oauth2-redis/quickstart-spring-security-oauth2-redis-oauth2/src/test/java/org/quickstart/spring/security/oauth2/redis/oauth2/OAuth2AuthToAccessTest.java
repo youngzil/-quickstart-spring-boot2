@@ -13,7 +13,7 @@ import org.junit.Test;
 import org.springframework.security.oauth2.common.util.OAuth2Utils;
 
 /**
- * @author youngzil@163.com
+ * @author yangzl
  * @description TODO
  * @createTime 2020/5/19 16:16
  */

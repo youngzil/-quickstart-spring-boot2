@@ -1,7 +1,7 @@
 package com.quickstart.springboot.valid.exception;
 
 /**
- * @author youngzil@163.com
+ * @author yangzl
  * @description TODO
  * @createTime 2020/4/20 22:58
  */

@@ -3,7 +3,7 @@ package org.quickstart.spring.starter.autoconfigure;
 import org.springframework.stereotype.Component;
 
 /**
- * @author youngzil@163.com
+ * @author yangzl
  * @description TODO
  * @createTime 2019/11/24 12:02
  */
