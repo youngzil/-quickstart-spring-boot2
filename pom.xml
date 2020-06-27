@@ -55,7 +55,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.10</version>
+      <version>1.18.12</version>
       <scope>provided</scope>
     </dependency>
 
@@ -67,12 +67,24 @@
 
   </dependencies>
 
+  <modules>
+    <module>quickstart-spring-cache</module>
+    <module>quickstart-spring-redis</module>
+    <module>quickstart-spring-security</module>
+    <module>quickstart-spring-swagger</module>
+    <module>quickstart-springboot-tkmapper</module>
+    <module>quickstart-spring-kafka</module>
+    <module>quickstart-spring-webflux</module>
+    <module>quickstart-spring-starter</module>
+    <module>quickstart-spring-valid</module>
+  </modules>
+
   <build>
     <plugins>
 
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.8.1</version>
         <configuration>
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
@@ -90,18 +102,6 @@
 
     </plugins>
   </build>
-
-  <modules>
-    <module>quickstart-spring-cache</module>
-    <module>quickstart-spring-redis</module>
-    <module>quickstart-spring-security</module>
-    <module>quickstart-spring-swagger</module>
-    <module>quickstart-springboot-tkmapper</module>
-    <module>quickstart-spring-kafka</module>
-    <module>quickstart-spring-webflux</module>
-    <module>quickstart-spring-starter</module>
-    <module>quickstart-spring-valid</module>
-  </modules>
 
   <repositories>
     <repository>
