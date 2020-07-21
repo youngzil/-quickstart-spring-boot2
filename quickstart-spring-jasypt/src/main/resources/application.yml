@@ -1,0 +1,26 @@
+# --- server
+server:
+  port: 9001
+  servlet:
+    context-path: /jasypt
+
+spring:
+  application:
+    name: jasypt-server
+encryptedv2:
+#  property: ENC(6xjnf64xeIJHf0opJFUVyg==)
+  property: ENC@[6xjnf64xeIJHf0opJFUVyg==]
+
+jasypt:
+  encryptor:
+    password: G0CvDz7oJn6 #根密码
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+    property:
+      prefix: "ENC@["
+      suffix: "]"
+
+logging:
+  level:
+    root: DEBUG
+    com.quickstart.springboot.jasypt: DEBUG
