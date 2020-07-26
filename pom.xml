@@ -69,6 +69,7 @@
 
   <modules>
     <module>quickstart-spring-cache</module>
+    <module>quickstart-spring-app</module>
     <module>quickstart-spring-jasypt</module>
     <module>quickstart-spring-redis</module>
     <module>quickstart-spring-security</module>
