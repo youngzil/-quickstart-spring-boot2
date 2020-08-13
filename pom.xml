@@ -79,6 +79,7 @@
     <module>quickstart-spring-webflux</module>
     <module>quickstart-spring-starter</module>
     <module>quickstart-spring-valid</module>
+    <module>quickstart-spring-japidocs</module>
   </modules>
 
   <build>

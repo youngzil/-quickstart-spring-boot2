@@ -1,5 +1,8 @@
 Spring WebFlux 除了提供 REST web 服务外，还支持渲染动态 HTML 内容，Spring WebFlux 支持一系列模板引擎，包括 Thymeleaf、FreeMarker 和 Mustache。
 
+Spring WebFlux默认使用Netty
+
+
 Spring Boot 为以下的模板引擎提供了自动配置的支持：
 FreeMarker
 Thymeleaf

@@ -4,13 +4,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>org.quickstart</groupId>
-    <artifactId>quickstart-spring-webflux</artifactId>
+    <artifactId>quickstart-spring-boot2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>quickstart-spring-webflux-tomcat</artifactId>
+  <artifactId>quickstart-spring-japidocs</artifactId>
   <packaging>war</packaging>
   <name>${project.artifactId}-${project.version}</name>
   <url>http://maven.apache.org</url>
@@ -21,19 +21,11 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.projectreactor</groupId>
-      <artifactId>reactor-core</artifactId>
-      <version>3.3.7.RELEASE</version>
-    </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>io.github.yedaxia</groupId>
+      <artifactId>japidocs</artifactId>
+      <version>1.4.2</version>
     </dependency>
 
   </dependencies>
