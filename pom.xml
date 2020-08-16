@@ -80,6 +80,7 @@
     <module>quickstart-spring-starter</module>
     <module>quickstart-spring-valid</module>
     <module>quickstart-spring-japidocs</module>
+    <module>quickstart-spring-liteflow</module>
   </modules>
 
   <build>
