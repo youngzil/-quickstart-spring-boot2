@@ -28,6 +28,12 @@ public class ApiController {
   }
 
 
+    @GetMapping("/hello")
+    public String hello() {
+      return "Welcome to reactive world ~";
+    }
+
+
   @GetMapping({"get"})
   public Mono<Map> tastpost() {
     Map<String, Object> object = new HashMap<>(16);

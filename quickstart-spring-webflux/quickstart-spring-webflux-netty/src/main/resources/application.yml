@@ -1,2 +1,16 @@
 server:
   port: 8090
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: oauth2-server
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.security: DEBUG
+    com.asiainfo: DEBUG
+  file:
+    name: logs/${spring.application.name}.log
