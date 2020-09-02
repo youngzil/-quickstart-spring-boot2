@@ -81,6 +81,7 @@
     <module>quickstart-spring-valid</module>
     <module>quickstart-spring-japidocs</module>
     <module>quickstart-spring-liteflow</module>
+    <module>quickstart-spring-kaptcha</module>
   </modules>
 
   <build>
