@@ -84,6 +84,7 @@
     <module>quickstart-spring-kaptcha</module>
     <module>quickstart-spring-fastdfs</module>
     <module>quickstart-spring-rsa-encrypt</module>
+    <module>quickstart-spring-netty-rpc</module>
   </modules>
 
   <build>

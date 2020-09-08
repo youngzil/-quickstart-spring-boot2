@@ -1,0 +1,23 @@
+# --- server
+server:
+  port: 9999
+  servlet:
+    context-path: /netty
+
+spring:
+  application:
+    name: netty
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    jmx:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: DEBUG
+    com.quickstart.springboot.netty.rpc: DEBUG
