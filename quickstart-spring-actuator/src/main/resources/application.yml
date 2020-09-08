@@ -1,0 +1,33 @@
+server:
+  port: 8080
+info:
+  app:
+    name: spring-boot-actuator
+    description: This is my first spring boot application
+    version: 2.0.0
+spring:
+  application:
+    name: Actuator-service-2
+  security:
+    user:
+      name: actuator
+      password: actuator
+      roles: ACTUATOR_ADMIN
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      cors:
+        allowed-origins: http://www.geekdigging.com
+        allowed-methods: GET,POST
+  #      base-path: /monitor
+  endpoint:
+    health:
+      show-details: always
+      defaults:
+        enabled: true
+    heapdump:
+      show-details: always
+    shutdown:
+      enabled: true
