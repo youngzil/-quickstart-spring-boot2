@@ -1,5 +1,6 @@
 现在先启动工程，打开浏览器访问：  
 http://localhost:8080/actuator 
+http://localhost:8888/actuator 
 
 登录  
 admin/admin

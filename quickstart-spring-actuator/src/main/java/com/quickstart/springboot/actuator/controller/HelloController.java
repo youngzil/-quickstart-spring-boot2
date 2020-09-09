@@ -20,6 +20,7 @@ public class HelloController {
 
   @GetMapping("/hello")
   public String hello() {
+    monitor.getOrderCount().increment();
     return "Hello Spring Boot Actuator2";
   }
 

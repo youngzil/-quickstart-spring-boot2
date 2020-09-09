@@ -88,6 +88,7 @@
     <module>quickstart-spring-netty-rpc</module>
     <module>quickstart-spring-netty-action</module>
     <module>quickstart-spring-actuator</module>
+    <module>quickstart-spring-admin</module>
   </modules>
 
   <build>
