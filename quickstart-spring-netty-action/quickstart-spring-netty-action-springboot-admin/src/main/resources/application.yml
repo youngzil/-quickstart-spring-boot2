@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-admin
+  security:
+    user:
+      name: SBA_admin
+      password: SBA_password
+      roles: SBA_ADMIN
+server:
+  port: 8888

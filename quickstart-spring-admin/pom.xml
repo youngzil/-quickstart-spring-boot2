@@ -3,49 +3,49 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<parent>
-		<groupId>org.quickstart</groupId>
+  <parent>
+    <groupId>org.quickstart</groupId>
     <artifactId>quickstart-spring-boot2</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
 
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-spring-admin</artifactId>
-	<packaging>pom</packaging>
-	<name>${project.artifactId}-${project.version}</name>
-	<url>http://maven.apache.org</url>
-	<description>Demo project for Spring Boot Admin</description>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>quickstart-spring-admin</artifactId>
+  <packaging>pom</packaging>
+  <name>${project.artifactId}-${project.version}</name>
+  <url>http://maven.apache.org</url>
+  <description>Demo project for Spring Boot Admin</description>
 
-	<properties>
+  <properties>
     <spring-boot-admin.version>2.3.0</spring-boot-admin.version>
-	</properties>
+  </properties>
 
-	<dependencies>
+  <dependencies>
 
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-server</artifactId>
-			<version>${spring-boot-admin.version}</version>
-		</dependency>
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-server</artifactId>
+      <version>${spring-boot-admin.version}</version>
+    </dependency>
 
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-server-ui</artifactId>
-			<version>${spring-boot-admin.version}</version>
-		</dependency>
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-server-ui</artifactId>
+      <version>${spring-boot-admin.version}</version>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
-			<!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
-		</dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
+      <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
+    </dependency>
 
-	</dependencies>
+  </dependencies>
 
-	<modules>
-		<module>quickstart-spring-admin-client</module>
-		<module>quickstart-spring-admin-server</module>
-	</modules>
-	
+  <modules>
+    <module>quickstart-spring-admin-client</module>
+    <module>quickstart-spring-admin-server</module>
+  </modules>
+
 </project>

@@ -1,0 +1,62 @@
+# web port
+server:
+  port: 8082
+spring:
+  application:
+    name: netty-heartbeat-client
+  security:
+    user:
+      name: SBA_client
+      password: SBA_client_password
+  boot:
+    admin:
+      client:
+        # Spring Boot Admin Server 地址
+        url: http://127.0.0.1:8888
+        username: SBA_admin
+        password: SBA_password
+        instance:
+          metadata:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+
+    # 默认情况下，大多数端点都不通过http公开，我们公开了所有端点。对于生产，您应该仔细选择要公开的端点。
+
+# 是否打开swagger
+swagger:
+  enable: true
+
+netty:
+  server:
+    host: 127.0.0.1
+    port: 11211
+
+#自定义监控端点 key
+channel:
+  id: 1003
+
+management:
+  # 关闭健康检查权限
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  tags:
+    environment: DEV
+
+# 日志
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+  pattern:
+    file: '%blue(%d{MM-dd HH:mm:ss}) [%boldYellow(%thread)] | %highlight(%-5level) | %boldGreen(%logger) %X{clientIp} %X{operateId} - %highlight(%msg) %n'
+  file:
+    name: /application.log

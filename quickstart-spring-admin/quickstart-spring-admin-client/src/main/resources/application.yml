@@ -35,9 +35,10 @@ info:
 
 # 日志
 logging:
-  file: /application.log
   level:
     org:
       springframework: info
   pattern:
     file: '%blue(%d{MM-dd HH:mm:ss}) [%boldYellow(%thread)] | %highlight(%-5level) | %boldGreen(%logger) %X{clientIp} %X{operateId} - %highlight(%msg) %n'
+  file:
+    name: /application.log
