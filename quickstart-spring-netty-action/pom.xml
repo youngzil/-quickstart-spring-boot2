@@ -20,7 +20,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <netty.version>4.1.51.Final</netty.version>
     <swagger.version>3.0.0</swagger.version>
-    <junit.version>4.13</junit.version>
+    <junit.version>4.13.1</junit.version>
     <spring-boot-admin.version>2.3.0</spring-boot-admin.version>
   </properties>
 

@@ -198,7 +198,7 @@ https://juejin.im/post/5b3f283af265da0f6012ef30
 http://blog.didispace.com/spring-security-oauth2-xjf-3/
 
 
-文章参考
+Spring Security Oauth2 认证参考
 https://blog.csdn.net/u013815546/article/category/7090661
 https://blog.csdn.net/qq_30905661/article/category/8082091
 https://blog.csdn.net/wuzhiwei549/article/details/79815491

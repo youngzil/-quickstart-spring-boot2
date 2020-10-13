@@ -7,6 +7,61 @@
 
 Spring Boot 性能优化
 
+- [反爬虫组件kk-anti-reptile](#反爬虫组件kk)
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+[疑问]复杂的spring源码从哪儿开始看？
+-------------------------------------
+🔥spring程序是如何启动的？
+🔥spring是如何加载配置文件到应用程序的？
+🔥掌握核心接口BeanDefinitionReader
+🔥掌握核心接口BeanFactory
+🔥彻底搞懂Spring的refresh方法
+🔥BeanPostProcessor接口的作用及实现
+🔥BeanFactoryPostProcessor接口的作用及实现
+🔥Bean实现的Aware接口是什么？
+🔥Spring Bean实例化过程大揭秘
+🔥彻底理解FactoryBean接口
+🔥巧妙回答Spring IOC面试题
+🔥轻轻松松搞定Spring IOC源码
+---------------------------------------
+🚀戳此进直播间：https://ke.qq.com/course/399017?taid=10318882267338409&tuin=a982d3d7
+
+
+
+[机智]在线debug，带你彻底搞懂spring循环依赖问题
+✨今晚 20：00
+💎主讲老师：连鹏举老师
+----------------
+🍏spring中bean的生命周期
+
+🍏spring创建bean的流程
+
+🍏什么是spring的循环依赖问题
+
+🍏spring循环依赖问题如何解决
+
+🍏为什么spring使用三级缓存解决循环依赖问题
+
+🍏spring循环依赖源码解析
+----------------
+[勾引]戳此进直播间啦：https://ke.qq.com/course/399017?taid=9800909211440809&tuin=6c381156
+
+
+
+@所有人
+[色]一节课带你轻松搞定springboot自动装配源码
+----------------
+✨springboot的自动装配是什么？
+✨spring.factories文件的作用
+✨springboot如何加载注解类
+✨如何加载spring.factories文件
+✨springboot的自动装配的实现原理
+✨springboot自动装配的源码分析
+
+
 
 
 
@@ -159,6 +214,18 @@ Spring Boot 性能优化
 
 
 ---------------------------------------------------------------------------------------------------------------------
+## 反爬虫组件kk
+## 反爬虫组件kk-anti-reptile
+
+[反爬虫组件kk-anti-reptile](https://github.com/kekingcn/kk-anti-reptile)  
+kk-anti-reptile 是适用于基于 spring-boot 开发的分布式系统的反爬虫组件。
+
+kk-anti-reptile 使用基于 Servlet 规范的的 Filter 对请求进行过滤，在其内部通过 spring-boot 的扩展点机制，实例化一个 Filter，并注入到 Spring 容器 FilterRegistrationBean 中，通过 Spring 注入到 Servlet 容器中，从而实现对请求的过滤。
+
+
+参考  
+https://cloud.tencent.com/developer/article/1708663  
+
 
 
 

@@ -68,4 +68,21 @@ https://github.com/chasdream/spring-boot
 
 
 
+SpringBoot2学习参考  
+https://github.com/meteor1993/spring-boot-examples  
+https://github.com/dyc87112/SpringBoot-Learning  
+https://github.com/keets2012/Spring-Boot-Samples  
+
+
+
+SpringBoot和Netty整合  
+https://crossoverjie.top/2018/05/24/netty/Netty(1)TCP-Heartbeat/  
+https://github.com/duanwucui/netty-action  
+/Users/yangzl/git/quickstart-spring-boot/quickstart-spring-boot-netty-action  
+/Users/yangzl/git/quickstart-spring-boot2/quickstart-spring-netty-action  
+
+
+
+
+
 
