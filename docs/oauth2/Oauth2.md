@@ -63,6 +63,21 @@ JWT的安全隐患
 🎈使用 JWT 替换SpringSecurity Session认证
 
 
+@所有人
+正经的微服务中权限与会话管理该怎么设计
+--------------------------------
+有状态会话与无状态会话
+如何设计一个安全的接口
+SSO单点登录系统的演化
+集群化Session共享 SpringSession + Redis
+OAuth2.0原理、应用场景
+OAuth2.0认证服务器资源服务器 与第三方服务实现
+JWT底层原理与应用场景
+JWT 在微服务中的应用
+JWT的安全隐患
+直播间等你们呦：https://ke.qq.com/webcourse/index.html?cid=399017&term_id=100475965&taid=9751182080087721&from=41
+
+
 
 
 

@@ -66,6 +66,23 @@ Spring Boot 性能优化
 
 
 
+复杂的spring源码从哪儿开始看？so easy
+----------------
+[太阳]spring程序是如何启动的？
+[太阳]spring是如何加载配置文件到应用程序的？
+[太阳]掌握核心接口BeanDefinitionReader
+[太阳]掌握核心接口BeanFactory
+[太阳]彻底搞懂Spring的refresh方法
+[太阳]BeanPostProcessor接口的作用及实现
+[太阳]BeanFactoryPostProcessor接口的作用及实现
+[太阳]Bean实现的Aware接口是什么？
+[太阳]Spring Bean实例化过程大揭秘
+[太阳]彻底理解FactoryBean接口
+[太阳]巧妙回答Spring IOC面试题
+[太阳]轻轻松松搞定Spring IOC源码" 
+----------------
+戳此进直播间啦：https://ke.qq.com/webcourse/index.html?cid=399017&term_id=100475965&taid=9751182080087721&from=41
+
 
 
 
