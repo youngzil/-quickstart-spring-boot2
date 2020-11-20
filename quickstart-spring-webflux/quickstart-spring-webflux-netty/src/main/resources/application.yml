@@ -11,6 +11,6 @@ logging:
   level:
     root: DEBUG
     org.springframework.security: DEBUG
-    com.asiainfo: DEBUG
+    com.quickstart: DEBUG
   file:
     name: logs/${spring.application.name}.log

@@ -36,5 +36,5 @@ logging:
   level:
     root: DEBUG
     org.springframework.security: DEBUG
-    com.asiainfo: DEBUG
+    com.quickstart: DEBUG
   file: ${logPath}/${spring.application.name}.log

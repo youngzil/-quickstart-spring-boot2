@@ -62,7 +62,21 @@ Spring Boot 性能优化
 ✨springboot自动装配的源码分析
 
 
-
+----------------
+🔑1、学习源码的方法论：如何高效的学习源码
+🔑2、一招教你如何手撕Spring源码
+🔑3、spring程序是如何启动的？
+🔑4、spring是如何加载配置文件到应用程序的？
+🔑5、掌握核心接口BeanDefinitionReader
+🔑6、掌握核心接口BeanFactory
+🔑7、彻底搞懂Spring的refresh方法
+🔑8、BeanPostProcessor接口的作用及实现
+🔑9、BeanFactoryPostProcessor接口的作用及实现
+🔑10、Bean实现的Aware接口是什么？
+🔑11、Spring Bean实例化过程大揭秘
+🔑12、彻底理解FactoryBean接口
+🔑13、Spring中的Environment接口有什么作用
+🔑14、如何巧妙回答Spring IOC面试题
 
 
 
@@ -125,7 +139,7 @@ SpringBoot使用spring-boot-maven-plugin插件打包，实际是通过org.spring
   
 
 Manifest-Version: 1.0
-Implementation-Title: AIFGateway/Security/Client
+Implementation-Title: Gateway/Security/Client
 Implementation-Version: 1.0
 Start-Class: com.pobo.spring.security.demo.Application
 Spring-Boot-Classes: BOOT-INF/classes/

@@ -1,4 +1,4 @@
-package com.asiainfo.aifgw.security.common.redis;
+package com.quickstart.test.security.common.redis;
 
 import java.util.HashMap;
 import java.util.Map;

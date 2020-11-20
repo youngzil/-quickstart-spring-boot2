@@ -1,4 +1,4 @@
-package com.asiainfo.aifgw.security.oauth2.config;
+package com.quickstart.test.security.oauth2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

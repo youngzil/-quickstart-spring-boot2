@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "7573c91b-72fb-4e83-aaf1-8f0417c450cc",
-		"name": "aifgw-oauth2",
+		"name": "gateway-oauth2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

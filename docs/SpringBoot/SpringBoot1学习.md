@@ -3,19 +3,19 @@ Springboot可以进行Java EE开发的绝大多数应用场景：Web开发，数
 
 为什么会有SpringBoot
 Spring在JavaEE开发中是实际意义上的标准，但是开发中会遇到下述问题
-  大量配置文件的定义
-  与第三方软件整个的技术问题
+ 大量配置文件的定义
+ 与第三方软件整个的技术问题
 
 而Spring每个新版本的推出都以减少配置作为自己的主要目标
-  （1）注解声明Bean
-  （2）Java配置代替xml配置
+ （1）注解声明Bean
+ （2）Java配置代替xml配置
 
 SpringBoot具有如下特点
-  （1）习惯优于配置，大多数配置默认，只需很好配置
-  （2）项目快速搭建，无配置整合第三方框架
-  （3）自动配置和Java配置
-  （4）内嵌Servlet（Tomcat）容器，应用可jar包运行
-  （5）运行中应用状态的监控
+ （1）习惯优于配置，大多数配置默认，只需很好配置
+ （2）项目快速搭建，无配置整合第三方框架
+ （3）自动配置和Java配置
+ （4）内嵌Servlet（Tomcat）容器，应用可jar包运行
+ （5）运行中应用状态的监控
 
 SpringBoot完全是一个单纯的基于spring的应用。
 
@@ -65,7 +65,7 @@ https://blog.csdn.net/caychen/article/details/79981446
 https://blog.csdn.net/u010963948/article/details/76550223
 https://blog.csdn.net/wu2374633583/article/details/80075198
 Spring Boot也可以从以下位置加载配置； 优先级从高到低；高优先级的配置覆盖低优先级的配置，所有的配置会形成互补配置。
-0. @TestPropertySource 注解 
+0. @TestPropertySource 注解
 1、命令行参数
 所有的配置都可以在命令行上进行指定
 java -jar spring-boot-02-config-SNAPSHOT.jar --server.port=8087 --server.context-path=/abc
@@ -79,7 +79,7 @@ java -jar spring-boot-02-config-SNAPSHOT.jar --server.port=8087 --server.context
 优先加载带profile
 6、在打包的jar外的应用程序配置文件（通过--spring.config.location=/path/test_evn.properties）
 6、jar包外部的application-{profile}.properties或application.yml(带spring.profile)配置文件
-7、jar包内部的application-{profile}.properties或application.yml(带spring.profiles)配置文件，（application.properties，包含YAML和profile变量） 
+7、jar包内部的application-{profile}.properties或application.yml(带spring.profiles)配置文件，（application.properties，包含YAML和profile变量）
 
 再来加载不带profile
 8、jar包外部的application.properties或application.yml(不带spring.profile)配置文件

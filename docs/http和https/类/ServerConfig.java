@@ -1,4 +1,4 @@
-package com.asiainfo.aifgw.security.oauth2;
+package com.quickstart.test.security.oauth2;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;

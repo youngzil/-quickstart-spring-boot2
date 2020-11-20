@@ -1,4 +1,4 @@
-package com.asiainfo.aifgw.security.oauth2;
+package com.quickstart.test.security.oauth2;
 
 import org.eclipse.jetty.security.ConstraintMapping;
 import org.eclipse.jetty.security.ConstraintSecurityHandler;

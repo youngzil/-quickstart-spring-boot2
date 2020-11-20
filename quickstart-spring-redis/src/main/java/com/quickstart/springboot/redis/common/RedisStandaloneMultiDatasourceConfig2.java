@@ -1,4 +1,4 @@
-package com.asiainfo.aifgw.security.common.redis;
+package com.quickstart.test.security.common.redis;
 
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.springframework.beans.factory.annotation.Qualifier;
