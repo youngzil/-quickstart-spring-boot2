@@ -1,17 +1,84 @@
-学习网站
+- [Spring依赖注入的方式](SpringBoot/Spring依赖注入的方式.md)
+- [Spring解决循环依赖机制](SpringBoot/Spring解决循环注入的机制.md)
+- [BeanFactory和FactoryBean区别](springmvc/BeanFactory和FactoryBean区别.md)
+    - Spring中有两种类型的Bean，FactoryBean实现原理
+    - BeanFactory和FactoryBean区别
+- [Springboot的条件注解](SpringBoot/Springboot的条件注解.md)
+- [Spring事务传播行为详解](springmvc/Spring事务传播行为详解.md)
+- [Spring AOP切面实现原理](springmvc/Spring AOP.md)
+    - Spring AOP中的动态代理主要有两种方式，JDK动态代理和CGLIB动态代理。
+- [ContextLoaderListener和DispatchServlet区别](springmvc/ContextLoaderListener和DispatchServlet区别.md)
+- [springmvc父子容器](springmvc/springmvc父子容器.md)
+
+
+- [classpath:与classpath*:的区别](SpringBoot/classpath:与classpath*:的区别.md)
+- [Spring的@Value属性注入](SpringBoot/Spring的@Value属性注入.md)
+- [SpringBoot项目启动时执行特定方法](SpringBoot/SpringBoot项目启动时执行特定方法.md)
+- [SpringBoot缓存实战Caffeine](SpringBoot/SpringBoot缓存实战Caffeine.md)
+- [SpringBoot设置跨域](SpringBoot/SpringBoot设置跨域.md)
+- [spring-boot-devtools.md](SpringBoot/spring-boot-devtools.md)
+
+
+- [PropertyPlaceholderConfigurer使用](SpringBoot/PropertyPlaceholderConfigurer使用.md)
+- [SpringBoot1学习](SpringBoot/SpringBoot1学习.md)
+- [SpringBoot2学习](SpringBoot/SpringBoot2学习.md)
+- [SpringBoot四种读取properties文件的方式](SpringBoot/SpringBoot四种读取properties文件的方式.md)
+- [SpringBoot学习](SpringBoot/SpringBoot学习.md)
+- [SpringBoot异常统一处理](SpringBoot/SpringBoot异常统一处理.md)
+- [Springboot打成war包并在tomcat中运行](SpringBoot/Springboot打成war包并在tomcat中运行.md)
+- [spring提供的常用接口](SpringBoot/spring提供的常用接口.md)
+- [Spring注解](SpringBoot/Spring注解.md)
+- [Spring的Aspect的Around表达式](SpringBoot/Spring的Aspect的Around表达式.md)
+- [Spring自定义XML标签](SpringBoot/Spring自定义XML标签.md)
+- [SpringBoot优雅停机](SpringBoot/SpringBoot优雅停机.md)
+- [Spring的IOC流程中核心扩展接口的12个扩展点](SpringBoot/Spring的IOC流程中核心扩展接口的12个扩展点.md)
+- [Spring解析ApplicationContext.xml中注入的Bean的解析流程](SpringBoot/Spring解析ApplicationContext.xml中注入的Bean的解析流程.md)
+- [使用Jasypt对SpringBoot配置文件加密](SpringBoot/使用Jasypt对SpringBoot配置文件加密.md)
+- [启动Spring容器的方式有三种.md](SpringBoot/启动Spring容器的方式有三种)
+- [基于Maven的SpringBoot项目实现热部署的两种方式](SpringBoot/基于Maven的SpringBoot项目实现热部署的两种方式.md)
+- [多数据源-动态数据源](SpringBoot/多数据源-动态数据源.md)
+- [循环依赖问题.md](SpringBoot/循环依赖问题.md)
+- [聊聊Spring的bean覆盖（存在同名name、id问题）](SpringBoot/聊聊Spring的bean覆盖（存在同名name、id问题）.md)
+- [获取Spring的ApplicationContext](SpringBoot/获取Spring的ApplicationContext.md)
+- [获取请求参数的几个注解](SpringBoot/获取请求参数的几个注解.md)
+- [项目打包配置](SpringBoot/项目打包配置.md)
+- [Bean配置的三种方式（XML、注解、Java类）介绍与对比](SpringBoot/Bean配置的三种方式（XML、注解、Java类）介绍与对比.md)
+
+
+- [Spring MVC 处理请求的全过程](#Spring-MVC处理请求的全过程)
 
 
 1、Spring Bean对象
-2、Bean对象循环依赖问题处理
 3、Spring Bean的生命周期和常用接口类
-4、spring中有两种类型的Bean，FactoryBean实现原理：
-5、BeanFactory和FactoryBean
 6、Spring配置解析文件ApplicationContext.xml
 7、自定义命名空间处理器NamespaceHandler和Spring自定义XML标签
 java和spring中的上下文Context
 
+加载Bean的方式
+DI（IoC）、AOP
+
+
+
+[Spring 和 SpringBoot 之间到底有啥区别？](https://cloud.tencent.com/developer/article/1606321)  
+
+
+
+
 
 使用Spring进行验证和异常处理
+
+
+aop的拦截好处：
+低侵入
+低耦合
+隔离性
+
+
+Spring有哪些模块
+
+
+[Spring过滤器和拦截器执行流程](https://www.jianshu.com/p/394480ae9b7c)  
+
 
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -21,6 +88,32 @@ https://mp.weixin.qq.com/s/Xs0C1cCAva9YbYumCXUqnA
 https://gitee.com/javacode2018/spring-series
 
 https://blog.csdn.net/qq924862077/category_6754158.html
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+## Spring MVC处理请求的全过程
+
+Spring一个请求的拦截流程
+
+我们从第一步开始，首先，用户的浏览器发出了一个请求，这个请求经过互联网到达了我们的服务器。
+
+Servlet 容器首先接待了这个请求，并将该请求委托给 DispatcherServlet 进行处理。
+
+1. 接着 DispatcherServlet 将该请求传给了处理器映射组件 HandlerMapping，并获取到适合该请求的拦截器和处理器。在获取到处理器后，DispatcherServlet 还不能直接调用处理器的逻辑，需要进行对处理器进行适配。
+
+2. 处理器适配成功后，DispatcherServlet 通过处理器适配器 HandlerAdapter 调用处理器的逻辑，并获取返回值 ModelAndView。
+
+3. 之后，DispatcherServlet 需要根据 ModelAndView 解析视图。解析视图的工作由 ViewResolver 完成，若能解析成功，ViewResolver 会返回相应的视图对象 View。
+
+4. 在获取到具体的 View 对象后，最后一步要做的事情就是由 View 渲染视图，并将渲染结果返回给用户。
+
+
+
+参考  
+[Spring MVC 原理探秘 - 一个请求的旅行过程](https://cloud.tencent.com/developer/article/1156025)  
 
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -57,17 +150,6 @@ prototype配置实例：
 
 
 ---------------------------------------------------------------------------------------------------------------------
-
-
-Bean对象循环依赖问题处理：
-1、Spring不支持原型bean的循环依赖。对于原型bean的初始化过程中不论是通过构造器参数循环依赖还是通过setXxx方法产生循环依赖，Spring都会直接报错处理BeanCurrentlyInCreationException
-2、单例bean 构造器参数循环依赖：Spring在创建构造器循环依赖时其实就是循环初始化操作 A-> B -> A  当A要被初始化第二次时就直接抛出异常BeanCurrentlyInCreationException
-3、单例bean通过setXxx或者@Autowired进行循环依赖：简单来说就是对象通过构造函数初始化之后就暴露到容器中，这样就不会存在循环初始化对象的情况了
-Spring通过setXxx或者@Autowired方法解决循环依赖其实是通过提前暴露一个ObjectFactory对象来完成的，简单来说ClassA在调用构造器完成对象初始化之后，在调用ClassA的setClassB方法之前就把ClassA实例化的对象通过ObjectFactory提前暴露到Spring容器中。
-
-
-
----------------------------------------------------------------------------------------------------------------------
 Spring Bean的生命周期和常用接口类
 
 Spring Bean的生命周期：
@@ -90,44 +172,6 @@ BeanPostProcessor接口提供了两个方法：
 1、postProcessBeforeInitialization  可以对Bean在实例化之前添加一些逻辑处理
 2、postProcessAfterInitialization  可以对bean在实例化之后添加一些逻辑处理
 
-
-
-
----------------------------------------------------------------------------------------------------------------------
-BeanFactory和FactoryBean
-
-spring中有两种类型的Bean，FactoryBean实现原理：
-FactoryBean方法：getObject、getObjectType、isSingleton
-spring中有两种类型的Bean：一种是普通的JavaBean；另一种就是工厂Bean（FactoryBean），这两种Bean都受Spring的IoC容器管理，但它们之间却有一些区别。
-普通的JavaBean不再多说，我们将其定义好，然后在配置文件中定义并配置其依赖关系，就可以通过IoC容器的getBean获取到。
-FactoryBean跟普通Bean不同，它是实现了FactoryBean<T>接口的Bean，通过BeanFactory类的getBean方法直接获取到的并不是该FactoryBean的实例，而是该FactoryBean中方法getObject返回的对象。但我们可以通过其它途径获取到该FactoryBean的实例，方法就是在通过getBean方法获取实例时在参数name前面加上“&”符号即可。
-Spring对FactoryBean的实现机制是当你获取一个Bean时，如果获取的Bean的类型是FactoryBean，并且其name中并没有&则调用bean的getObject方法获取FactoryBean实现类中提供bean，否则就是直接返回普通的bean类型。
-
-
-
-BeanFactory及其子类是Spring IOC容器中最重要的一个类，BeanFactory由类名可以看出其是一个Bean工厂类，其实它确实是一个Bean工厂类，完成Bean的初始化操作。Bean的初始化操作还是一个比较麻烦的操作，首先根据spring注入配置将bean初始化为单例或者原型，其次需要根据Bean的属性配置来完成Bean参数的注入配置，还有要解决单例模式下Bean的循环依赖的问题，原型模式下bean的循环依赖会直接报错。
-
-BeanFactory 是Spring bean容器的根接口.提供获取bean,是否包含bean,是否单例与原型,获取bean类型,bean 别名的api.
-BeanFactory的方法： getBean、containsBean、isSingleton、isPrototype、getType、getAliases、
--- AutowireCapableBeanFactory 添加集成其他框架功能.如果集成WebWork则可以使用Spring对Actions等进行管理.
--- HierarchicalBeanFactory 提供父容器的访问功能
---ConfigurableBeanFactory 如名,提供factory的配置功能,眼花缭乱好多api
--- ConfigurableListableBeanFactory 集大成者,提供解析,修改bean定义,并与初始化单例.
--- ListableBeanFactory 提供容器内bean实例的枚举功能.这边不会考虑父容器内的实例.
-
-简单来说Spring对bean的初始化操作就是根据反射机制通过构造函数进行初始化的。
-简单来说Spring对属性值的注入方法还是比较简单的，通过Java提供的反射机制，对于有setXxx方法的变量直接通过反射调用方法注入参数值；对于没有setXxx方法的变量则通过Field方法，直接对变量进行赋值操作。
-
-
-
-BeanFactory的方法： getBean、containsBean、isSingleton、isPrototype、getType、getAliases、
-FactoryBean方法：getObject、getObjectType、isSingleton
-
-BeanFactory，以Factory结尾，表示它是一个工厂类(接口)，用于管理Bean的一个工厂。在Spring中，BeanFactory是IOC容器的核心接口，它的职责包括：实例化、定位、配置应用程序中的对象及建立这些对象间的依赖。
-Spring为我们提供了许多易用的BeanFactory实现，XmlBeanFactory就是常用的一个，该实现将以XML方式描述组成应用的对象及对象间的依赖关系。XmlBeanFactory类将持有此XML配置元数据，并用它来构建一个完全可配置的系统或应用。
-
-FactoryBean以Bean结尾，表示它是一个Bean，不同于普通Bean的是：它是实现了FactoryBean<T>接口的Bean，根据该Bean的ID从BeanFactory中获取的实际上是FactoryBean的getObject()返回的对象，而不是FactoryBean本身，如果要获取FactoryBean对象，请在id前面加一个&符号来获取。
-例如自己实现一个FactoryBean，功能：用来代理一个对象，对该对象的所有方法做一个拦截，在调用前后都输出一行LOG，模仿ProxyFactoryBean的功能。
 
 ---------------------------------------------------------------------------------------------------------------------
 

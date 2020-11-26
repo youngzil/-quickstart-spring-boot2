@@ -1,0 +1,56 @@
+Spring中有两种类型的Bean：一种是普通的JavaBean；另一种就是工厂Bean（FactoryBean）  
+
+BeanFactory由类名可以看出其是一个Bean工厂类，其实它确实是一个Bean工厂类，完成Bean的初始化操作。  
+BeanFactory 是Spring bean容器的根接口.提供获取bean,是否包含bean,是否单例与原型,获取bean类型,bean 别名的api.  
+
+简单来说Spring对bean的初始化操作就是根据反射机制通过构造函数进行初始化的。  
+简单来说Spring对属性值的注入方法还是比较简单的，通过Java提供的反射机制，对于有setXxx方法的变量直接通过反射调用方法注入参数值；对于没有setXxx方法的变量则通过Field方法，直接对变量进行赋值操作。
+
+
+
+BeanFactory和FactoryBean
+
+spring中有两种类型的Bean，FactoryBean实现原理：
+FactoryBean方法：getObject、getObjectType、isSingleton
+
+Spring中有两种类型的Bean：一种是普通的JavaBean；另一种就是工厂Bean（FactoryBean），这两种Bean都受Spring的IoC容器管理，但它们之间却有一些区别。
+
+普通的JavaBean不再多说，我们将其定义好，然后在配置文件中定义并配置其依赖关系，就可以通过IoC容器的getBean获取到。
+
+FactoryBean跟普通Bean不同，它是实现了FactoryBean<T>接口的Bean，通过BeanFactory类的getBean方法直接获取到的并不是该FactoryBean的实例，而是该FactoryBean中方法getObject返回的对象。
+
+但我们可以通过其它途径获取到该FactoryBean的实例，方法就是在通过getBean方法获取实例时在参数name前面加上“&”符号即可。
+
+Spring对FactoryBean的实现机制是当你获取一个Bean时，如果获取的Bean的类型是FactoryBean，并且其name中并没有&则调用bean的getObject方法获取FactoryBean实现类中提供bean，否则就是直接返回普通的bean类型。
+
+
+
+BeanFactory及其子类是Spring IOC容器中最重要的一个类，BeanFactory由类名可以看出其是一个Bean工厂类，其实它确实是一个Bean工厂类，完成Bean的初始化操作。Bean的初始化操作还是一个比较麻烦的操作，首先根据spring注入配置将bean初始化为单例或者原型，其次需要根据Bean的属性配置来完成Bean参数的注入配置，还有要解决单例模式下Bean的循环依赖的问题，原型模式下bean的循环依赖会直接报错。
+
+BeanFactory 是Spring bean容器的根接口.提供获取bean,是否包含bean,是否单例与原型,获取bean类型,bean 别名的api.
+
+BeanFactory的方法： getBean、containsBean、isSingleton、isPrototype、getType、getAliases、
+- AutowireCapableBeanFactory 添加集成其他框架功能.如果集成WebWork则可以使用Spring对Actions等进行管理.
+- HierarchicalBeanFactory 提供父容器的访问功能
+- ConfigurableBeanFactory 如名,提供factory的配置功能,眼花缭乱好多api
+- ConfigurableListableBeanFactory 集大成者,提供解析,修改bean定义,并与初始化单例.
+- ListableBeanFactory 提供容器内bean实例的枚举功能.这边不会考虑父容器内的实例.
+
+简单来说Spring对bean的初始化操作就是根据反射机制通过构造函数进行初始化的。  
+简单来说Spring对属性值的注入方法还是比较简单的，通过Java提供的反射机制，对于有setXxx方法的变量直接通过反射调用方法注入参数值；对于没有setXxx方法的变量则通过Field方法，直接对变量进行赋值操作。
+
+
+
+BeanFactory的方法： getBean、containsBean、isSingleton、isPrototype、getType、getAliases、
+FactoryBean方法：getObject、getObjectType、isSingleton
+
+BeanFactory，以Factory结尾，表示它是一个工厂类(接口)，用于管理Bean的一个工厂。在Spring中，BeanFactory是IOC容器的核心接口，它的职责包括：实例化、定位、配置应用程序中的对象及建立这些对象间的依赖。
+
+Spring为我们提供了许多易用的BeanFactory实现，XmlBeanFactory就是常用的一个，该实现将以XML方式描述组成应用的对象及对象间的依赖关系。XmlBeanFactory类将持有此XML配置元数据，并用它来构建一个完全可配置的系统或应用。
+
+FactoryBean以Bean结尾，表示它是一个Bean，不同于普通Bean的是：它是实现了FactoryBean<T>接口的Bean，根据该Bean的ID从BeanFactory中获取的实际上是FactoryBean的getObject()返回的对象，而不是FactoryBean本身，如果要获取FactoryBean对象，请在id前面加一个&符号来获取。
+例如自己实现一个FactoryBean，功能：用来代理一个对象，对该对象的所有方法做一个拦截，在调用前后都输出一行LOG，模仿ProxyFactoryBean的功能。
+
+
+
+

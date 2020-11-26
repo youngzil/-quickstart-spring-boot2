@@ -1,3 +1,5 @@
+( shutdown gracefully )
+
 SpringBoot应用程序的关闭目前总结起来有4种方式：
 
 Rest接口：使用spring-boot-starter-actuator模块里的ShutdownEndpoint

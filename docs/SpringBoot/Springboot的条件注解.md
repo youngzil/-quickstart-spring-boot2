@@ -1,10 +1,5 @@
-1、Springboot的条件注解
 
 
-
-
-
----------------------------------------------------------------------------------------------------------------------
 https://blog.csdn.net/xiaolyuh123/article/details/64124828
 https://blog.csdn.net/zwmnhao1980/article/details/80746877
 https://blog.csdn.net/chengqiuming/article/details/81878436
@@ -77,11 +72,6 @@ Spring容器中是否存在且只存在一个对应的实例。只有3个属性v
 @ConditionalOnWebApplication
 OnWebApplicationCondition
 应用程序是否是Web程序，没有提供属性，只是一个标识。会从判断Web程序特有的类是否存在，环境是否是Servlet环境，容器是否是Web容器等
-
-
----------------------------------------------------------------------------------------------------------------------
-
-
 
 
 

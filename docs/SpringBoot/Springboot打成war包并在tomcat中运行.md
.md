@@ -1,7 +1,7 @@
 把spring-boot项目按照平常的web项目一样发布到tomcat容器下
 
 一、修改打包形式
-在pom.xml里设置 <packaging>war</packaging>
+在pom.xml里设置<packaging>war</packaging>
 
 二、移除嵌入式tomcat插件
 在pom.xml里找到spring-boot-starter-web依赖节点，在其中添加如下代码，
@@ -81,9 +81,9 @@ public class App extends SpringBootServletInitializer {
 }
 
 五、打包部署
-在项目根目录下（即包含pom.xml的目录），在命令行里输入： 
-mvn clean package即可， 等待打包完成，出现[INFO] BUILD SUCCESS即为打包成功。 
-然后把target目录下的war包放到tomcat的webapps目录下，启动tomcat，即可自动解压部署。 
+在项目根目录下（即包含pom.xml的目录），在命令行里输入：
+mvn clean package即可， 等待打包完成，出现[INFO] BUILD SUCCESS即为打包成功。
+然后把target目录下的war包放到tomcat的webapps目录下，启动tomcat，即可自动解压部署。
 最后在浏览器中输入
 
 http://localhost:[端口号]/[打包项目名]/
