@@ -7,8 +7,15 @@
 - [Spring事务传播行为详解](springmvc/Spring事务传播行为详解.md)
 - [Spring AOP切面实现原理](springmvc/Spring AOP.md)
     - Spring AOP中的动态代理主要有两种方式，JDK动态代理和CGLIB动态代理。
+    - [动态代理和静态代理详解](https://github.com/youngzil/quickstart-framework/blob/master/quickstart-proxy/docs/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%92%8C%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86.md)
+    
 - [ContextLoaderListener和DispatchServlet区别](springmvc/ContextLoaderListener和DispatchServlet区别.md)
 - [springmvc父子容器](springmvc/springmvc父子容器.md)
+
+
+- [SpringBoot和Spring的区别](SpringBoot/SpringBoot和Spring的区别.md)
+- [@SpringBootApplication注解](SpringBoot/@SpringBootApplication注解.md)
+
 
 
 - [classpath:与classpath*:的区别](SpringBoot/classpath:与classpath*:的区别.md)

@@ -10,6 +10,17 @@ Spring在TransactionDefinition接口中规定了7种类型的事务传播行为�
 
 
 2. Spring中七种事务传播行为
+
+当前没有事务：新建、非事务执行、抛异常  
+当前存在事务：新建、当前事务挂起、抛异常  
+
+总结：  
+外部未开启事务，都是独立的事务  
+外部开启事务：1、Propagation.REQUIRED：加入外部事务，是一个事务，内外任何异常都会回滚【默认的方式】  
+            2、PROPAGATION_REQUIRES_NEW：开启独立事务，内外异常只会影响自己本身的  
+            3、PROPAGATION_NESTED：开启子事务，外部异常影响全部，内部异常只影响本身  
+
+
 事务传播行为类型	说明
 PROPAGATION_REQUIRED	如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。
 PROPAGATION_SUPPORTS	支持当前事务，如果当前没有事务，就以非事务方式执行。
