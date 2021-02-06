@@ -14,6 +14,7 @@ spring:
     #检测历史表是否存在，开启历史库
     db-history-used: true
     #校验流程文件，默认校验resources下的processes文件夹里的流程文件
+    checkProcessDefinitions: false
     check-process-definitions: false # 自动部署验证设置:true-开启（默认）、false-关闭
   datasource:
     url: jdbc:mysql://localhost:3306/testactivitidb?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&nullCatalogMeansCurrent=true

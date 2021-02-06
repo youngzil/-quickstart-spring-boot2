@@ -29,19 +29,41 @@ Activiti是一个轻量级的工作流和业务流程管理（BPM）平台，面
 
 
 ### 工作流七大service简单介绍
-1. repositoryService：流程仓库service,用于管理流程仓库,增删改查流程资源。
-2. runtimeService：运行时service,处理正在运行状态的流程实例,任务等。
-3. taskService：任务service,管理,查询任务，例如签收，办理,指派任务。
-4. historyService：历史service,可以查询所有历史数据,例如,流程实例,任务,活动，变量，附件等。
+1. RepositoryService：流程仓库service,用于管理流程仓库,增删改查流程资源。
+  1. Model 模型对象，BPMN文件的对象
+  2. Deploy 部署对象，根据BPMN文件创建的一个部署 
+  3. Process 根据部署的Deploy，开启一个流程 
+2. RuntimeService：运行时service,处理正在运行状态的流程实例,任务等。
+3. TaskService：任务Taskservice,管理,查询任务，例如签收，办理,指派任务。
+4. HistoryService：历史Taskservice,可以查询所有历史数据,例如,流程实例,任务,活动，变量，附件等。
 5. managementService：引擎管理service,和具体业务无关,主要是查询引擎配置，数据库，作业等。
 6. identityService：身份service,可以管理和查询用户,组之间的关系。
 7. formService：表单service,处理正在运行状态的流程实例,任务等。
 
 
+
+- RepositoryService：Model实体、Deploy部署、Process流程的管理
+- ProcessRuntime(RuntimeService)：Process流程的管理
+- TaskRuntime(TaskService)：Task任务的管理
+- HistoryService：历史Task的管理
+
+
+
+开发使用Activiti流程：
+1. 设计流程：生成Model实体
+2. 流程部署：Deploy部署
+3. 启动流程：
+4. 查询待办Task任务
+5. 任务认领和完成任务：claim拾取任务 和 complete完成任务
+6. 查询历史任务、历史流程实例、历史节点
+
+
+
+
 如果你的版本和我是一样的话7.1.0.M5，多半就会报错，sql少字段。这个应该是一个官方的BUG，只需要在 act_re_deployment中加两个字段就好了： VERSION_  int 和 PROJECT_RELEASE_VERSION_  varchar(255) 然后重新运行，应该就对了。  
 ```
-`alter table act_re_deployment add VERSION_ int null;
-alter table act_re_deployment add PROJECT_RELEASE_VERSION_ varchar(255) null;`
+alter table act_re_deployment add VERSION_ int null;
+alter table act_re_deployment add PROJECT_RELEASE_VERSION_ varchar(255) null;
 ```
 但是打印的已部署个数却是0。说好的 processes 下自动部署呢，最后自己部署一下，发现一切都对了的。
 
@@ -167,6 +189,7 @@ act_ru_task（1条记录） 当前的待执行的task任务
 [SpringBoot2+Activtiti7 整合](https://github.com/zjialin/SpringBoot2-Activiti7)  
 [activiti 7 + springboot2（六） SpringBoot2 整合 Activiti7](https://www.cnblogs.com/zsg88/p/12174750.html)  
 [activiti7+springboot2.1.x流程启动](https://www.jianshu.com/u/a7c7ea9fdc9a)  
+[《2020/01/06》Activiti7工作流+SpringBoot（一）](https://blog.csdn.net/weixin_42273782/category_9647269.html)  
 
 
 https://programmer.ink/think/5dd64cea04da7.html
