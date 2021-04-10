@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ResourceServerJwtApplication {
+public class JwtResourceServerApplication {
 
-    public static void main(String... args) {
-        SpringApplication.run(ResourceServerJwtApplication.class, args);
-    }
-
+	public static void main(String[] args) {
+		SpringApplication.run(JwtResourceServerApplication.class, args);
+	}
 }

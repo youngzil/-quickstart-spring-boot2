@@ -1,5 +1,7 @@
 
 参考 [SpringBoot Security整合JWT授权RestAPI](https://segmentfault.com/a/1190000021127877)  
+[代码](https://github.com/qianmoQ/spring-learn-integration/tree/master/security/security-jwt)
+
 
 
 #### 校验授权
@@ -33,13 +35,13 @@ curl -X POST 'http://127.0.0.1:8989/auth/login' --header 'Content-Type: applicat
 返回以下token信息
 
 ```bash
-eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU3NTIwNTg4OH0.zc3JTsIHIZSmi-hrgCB1AKrrjVWtnWB4YJjOhzml2k9qRdTGdoDYKM1XriQIAInvIrTDDkpozT4Ny58Wcpm4JA
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYxODQ5NDAwOH0.Hl6ZZwz0OSxeNF2xb-JDjLSkLFl0isS9jFqqa2enMCqfiPc2c-0zbpXVLp-JUa6z0QOSmiEnc5MftVsBAoHLEQ
 ```
 
 - 这时我们使用返回的token进行访问`/auth/hello`接口获取数据
 
 ```bash
-curl -X GET 'http://127.0.0.1:8989/auth/hello' --header 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU3NTIwNTg4OH0.zc3JTsIHIZSmi-hrgCB1AKrrjVWtnWB4YJjOhzml2k9qRdTGdoDYKM1XriQIAInvIrTDDkpozT4Ny58Wcpm4JA'
+curl -X GET 'http://127.0.0.1:8989/auth/hello' --header 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYxODQ5NDAwOH0.Hl6ZZwz0OSxeNF2xb-JDjLSkLFl0isS9jFqqa2enMCqfiPc2c-0zbpXVLp-JUa6z0QOSmiEnc5MftVsBAoHLEQ'
 ```
 
 返回以下信息
