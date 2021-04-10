@@ -1,146 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!--<parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--<parent>
+      <groupId>org.quickstart</groupId>
+      <artifactId>quickstart-all</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+    </parent>-->
+
+    <modelVersion>4.0.0</modelVersion>
     <groupId>org.quickstart</groupId>
-    <artifactId>quickstart-all</artifactId>
+    <artifactId>quickstart-spring-boot2</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
-  </parent>-->
+    <name>${project.artifactId}-${project.version}</name>
+    <url>http://maven.apache.org</url>
+    <description>Demo project for XXX</description>
 
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.quickstart</groupId>
-  <artifactId>quickstart-spring-boot2</artifactId>
-  <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>${project.artifactId}-${project.version}</name>
-  <url>http://maven.apache.org</url>
-  <description>Demo project for XXX</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Compiler settings properties -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <springboot.version>2.4.4</springboot.version>
+    </properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- Compiler settings properties -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-    <springboot.version>2.4.2</springboot.version>
-  </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR8</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-  <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${springboot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Hoxton.SR8</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
-  </dependencyManagement>
 
-  <dependencies>
+    <modules>
+        <module>quickstart-spring-cache</module>
+        <module>quickstart-spring-app</module>
+        <module>quickstart-spring-jasypt</module>
+        <module>quickstart-spring-redis</module>
+        <module>quickstart-spring-security</module>
+        <module>quickstart-spring-swagger</module>
+        <module>quickstart-spring-swagger3</module>
+        <module>quickstart-springboot-tkmapper</module>
+        <module>quickstart-spring-kafka</module>
+        <module>quickstart-spring-webflux</module>
+        <module>quickstart-spring-starter</module>
+        <module>quickstart-spring-valid</module>
+        <module>quickstart-spring-japidocs</module>
+        <module>quickstart-spring-liteflow</module>
+        <module>quickstart-spring-kaptcha</module>
+        <module>quickstart-spring-fastdfs</module>
+        <module>quickstart-spring-rsa-encrypt</module>
+        <module>quickstart-spring-netty-rpc</module>
+        <module>quickstart-spring-netty-action</module>
+        <module>quickstart-spring-actuator</module>
+        <module>quickstart-spring-admin</module>
+        <module>quickstart-spring-activiti</module>
+    </modules>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+    <build>
+        <plugins>
 
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.16</version>
-      <scope>provided</scope>
-    </dependency>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <compilerVersion>${maven.compiler.source}</compilerVersion>
+                    <encoding>${maven.compiler.encoding}</encoding>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${springboot.version}</version>
+            </plugin>
 
-  </dependencies>
+        </plugins>
+    </build>
 
-  <modules>
-    <module>quickstart-spring-cache</module>
-    <module>quickstart-spring-app</module>
-    <module>quickstart-spring-jasypt</module>
-    <module>quickstart-spring-redis</module>
-    <module>quickstart-spring-security</module>
-    <module>quickstart-spring-swagger</module>
-    <module>quickstart-spring-swagger3</module>
-    <module>quickstart-springboot-tkmapper</module>
-    <module>quickstart-spring-kafka</module>
-    <module>quickstart-spring-webflux</module>
-    <module>quickstart-spring-starter</module>
-    <module>quickstart-spring-valid</module>
-    <module>quickstart-spring-japidocs</module>
-    <module>quickstart-spring-liteflow</module>
-    <module>quickstart-spring-kaptcha</module>
-    <module>quickstart-spring-fastdfs</module>
-    <module>quickstart-spring-rsa-encrypt</module>
-    <module>quickstart-spring-netty-rpc</module>
-    <module>quickstart-spring-netty-action</module>
-    <module>quickstart-spring-actuator</module>
-    <module>quickstart-spring-admin</module>
-    <module>quickstart-spring-activiti</module>
-  </modules>
+    <repositories>
+        <!-- Maven依赖查询：http://mvnrepository.com/ http://search.maven.org/ -->
+        <!-- https://maven.aliyun.com -->
+        <repository>
+            <id>alimaven-public</id>
+            <name>aliyun maven</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
 
-  <build>
-    <plugins>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-          <compilerVersion>${maven.compiler.source}</compilerVersion>
-          <encoding>${maven.compiler.encoding}</encoding>
-          <showDeprecation>true</showDeprecation>
-          <showWarnings>true</showWarnings>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>${springboot.version}</version>
-      </plugin>
-
-    </plugins>
-  </build>
-
-  <repositories>
-    <repository>
-      <id>spring-milestones</id>
-      <name>Spring Milestones</name>
-      <url>https://repo.spring.io/libs-milestone</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-
-    <repository>
-      <id>alimaven-public</id>
-      <name>aliyun maven</name>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>fail</checksumPolicy>
-      </snapshots>
-    </repository>
-  </repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo1.maven.org/maven2/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>
