@@ -1,3 +1,9 @@
+- [标准的starter流程和模块](#标准的starter流程和模块)
+- [注解方式实现依赖加载](#注解方式实现依赖加载)
+
+---------------------------------------------------------------------------------------------------------------------
+
+## 标准的starter流程和模块
 通常一个完整的 starter 需要包含下面两个组件:
 1、Auto-Configure Module
 2、Starter Module
@@ -50,12 +56,27 @@ https://mp.weixin.qq.com/s/mC2b2foU9Ov5prHm8A-WDQ
 
 
 
+---------------------------------------------------------------------------------------------------------------------
+
+## 注解方式实现依赖加载
 
 
+1. 启动类上加上注解@EnableIdcRegistery 
+2. 注解依赖某个类
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    @Import({IdcRegistryHandler.class})
+    public @interface EnableIdcRegistery {
+    
+    }
+3. 依赖类implements ApplicationListener，在onApplicationEvent方法中处理注解相关的逻辑
+   public class IdcRegistryHandler implements ApplicationListener<RegisteryEvent> {
 
 
+在一些业务场景中，当容器初始化完成之后，需要处理一些操作，比如一些数据的加载、初始化缓存、特定任务的注册等等。这个时候我们就可以使用Spring提供的ApplicationListener来进行操作。
 
-
+在spring中InitializingBean接口也提供了类似的功能，只不过它进行操作的时机是在所有bean都被实例化之后才进行调用。根据不同的业务场景和需求，可选择不同的方案来实现。
 
 
 

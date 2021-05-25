@@ -1,3 +1,29 @@
+Spring Boot启动过程 和 Bean初始化过程中的拓展接口详解
+
+
+- InstantiationAwareBeanPostProcessor
+  
+- BeanPostProcessor接口的作用是在Spring容器完成Bean实例化前后可以添加一些自己的逻辑处理（所有的bean）
+- BeanFactoryPostProcessor在Bean创建之前，读取Bean的元属性，并根据自己的需求对元属性进行改变
+
+- InitializingBean：通过实现InitializingBean接口可以在BeanFactory 设置所有的属性后作出进一步的反应可以实现该接口，提供了一个唯一的方法afterPropertiesSet()，Bean属性都设置完毕后调用afterPropertiesSet()方法做一些初始化的工作
+- DisposableBean：提供了一个唯一的方法destory()，在Bean生命周期结束前调用destory()方法做一些收尾工作
+
+- BeanNameAware：在Bean加载的过程中可以获取到该Bean的id
+- ApplicationContextAware：在Bean加载的过程中可以获取到Spring的ApplicationContext
+- BeanFactoryAware：在Bean加载的过程中可以获取到加载该Bean的BeanFactory
+- BeanClassLoaderAware：获取Bean的类装载器
+
+- ApplicationListener：在一些业务场景中，当容器初始化完成之后，需要处理一些操作，比如一些数据的加载、初始化缓存、特定任务的注册等等。这个时候我们就可以使用Spring提供的ApplicationListener来进行操作。
+
+
+
+
+
+
+
+
+
 BeanPostProcessor：通过实现BeanPostProcessor接口允许用户对新建的Bean进行修改。
 BeanPostProcessor接口的作用是在Spring容器完成Bean实例化前后可以添加一些自己的逻辑处理，我们可以定义一个或者多个BeanPostProcessor接口的实现。
 之前的InitializingBean、DisposableBean、FactoryBean包括init-method和destory-method，针对的都是某个Bean控制其初始化的操作，而似乎没有一种办法可以针对每个Bean的生成前后做一些逻辑操作，PostProcessor则帮助我们做到了这一点，先看一个简单的
@@ -148,5 +174,8 @@ CustomEditorConfigurer类
 
 
 
-
+[Spring Boot启动过程 和 Bean初始化过程中的拓展接口详解](https://blog.csdn.net/guyue35/article/details/107285071)  
+[SpringBoot IoC启动流程、初始化过程及Bean生命周期各个阶段的作用](https://www.shuzhiduo.com/A/q4zVYBVxdK/)  
+[Spring Boot启动过程及回调接口汇总](https://github.com/chanjarster/spring-boot-all-callbacks)  
+[Spring Bean 生命周期 （实例结合源码彻底讲透）](https://segmentfault.com/a/1190000020747302)  
 
