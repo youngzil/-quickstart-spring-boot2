@@ -8,6 +8,12 @@
       <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
     </parent>-->
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.5</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.quickstart</groupId>
     <artifactId>quickstart-spring-boot2</artifactId>
@@ -90,6 +96,7 @@
         <module>quickstart-spring-actuator</module>
         <module>quickstart-spring-admin</module>
         <module>quickstart-spring-activiti</module>
+        <module>quickstart-spring-prometheus</module>
     </modules>
 
     <build>
