@@ -1,6 +1,5 @@
 package org.quickstart.springboot.japidocs;
 
-import static org.junit.Assert.*;
 
 import io.github.yedaxia.apidocs.Docs;
 import io.github.yedaxia.apidocs.DocsConfig;

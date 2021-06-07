@@ -1,7 +1,7 @@
 package org.quickstart.springboot.jasypt;
 
 import org.jasypt.util.text.BasicTextEncryptor;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author yangzl

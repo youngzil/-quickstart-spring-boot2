@@ -1,0 +1,19 @@
+server:
+  port: 8081
+#DB Configuration
+#spring:
+#  datasource:
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3307/microservice
+#    username: root
+#    password: 123456
+#logging
+logging:
+  level:
+    org.quickstart.springboot.prometheus: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
