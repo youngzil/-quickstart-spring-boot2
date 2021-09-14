@@ -1,0 +1,22 @@
+souche:
+  kafka:
+    binder:
+      #kafka地址
+      brokers: 127.0.0.1:9092
+      #zk地址
+      zk-nodes: 127.0.0.1:2181
+    group: test
+
+
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: TestGroupId
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.quickstart.springboot.kafka.example.Deserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.quickstart.springboot.kafka.example.Serializer
+
